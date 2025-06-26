@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sonilux Events – Organización de Eventos</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-8E0ao2xkc2HS3n+ApLpj+RyW+D65b3rfFJJng8Ew1B83aZ/6ilk5qgkB4ujcRqAGlHUac7DzmJbSX+9Vm3hQnw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --primary: #0c0c0c;
+      --accent: #1e90ff;
+      --light: #f9f9f9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Poppins", sans-serif; }
+    body { color: var(--light); background: var(--primary); line-height: 1.6; }
+
+    /* ────── Logo ────── */
+    .logo {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      z-index: 10;
+    }
+    .logo svg { width: 40px; height: 40px; }
+
+    /* ────── Hero ────── */
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      background: url("Escenario Evento.jpeg") center/cover no-repeat;
+      position: relative;
+    }
+    header::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.6); }
+    header>*{ position: relative; z-index:1; }
+    h1 { font-size: 2.8rem; margin-bottom: .35rem; }
+    .tagline { max-width: 680px; font-size: 1rem; font-weight: 300; margin-bottom: 1.3rem; line-height: 1.5; }
+    h2 { font-size: 1.25rem; font-weight: 300; margin-bottom: 1.5rem; max-width: 680px; }
+
+    .btn { background: var(--accent); color:#fff; padding:.75rem 1.6rem; border:none; border-radius:30px; font-size:1rem; cursor:pointer; text-decoration:none; transition:background .3s; }
+    .btn:hover{background:#1778d6;}
+
+    /* ────── Sections ────── */
+    section { padding:4rem 1.5rem; max-width:1200px; margin:0 auto; text-align:center; }
+
+    /* Services grid */
+    .services { display:flex; flex-wrap:wrap; justify-content:center; gap:2rem; }
+    .service-card { background:rgba(255,255,255,.05); padding:1.6rem 1rem; border-radius:14px; transition:transform .35s, box-shadow .35s; flex: 1 1 280px; max-width:320px; }
+    .service-card:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 14px 28px rgba(0,0,0,.35); }
+    .service-card i { font-size:2.2rem; margin-bottom:.9rem; color:var(--accent); transition:color .35s; }
+    .service-card:hover i{color:#fff;}
+    .service-card h3{margin-bottom:.5rem; font-weight:600;}
+
+    /* Event list */
+    .event-list { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; list-style:none; margin-top:2rem; }
+    .event-list li { background:rgba(255,255,255,.05); border-radius:10px; padding:.9rem 1rem; width:200px; transition:background .3s, transform .3s; }
+    .event-list li:hover { background:var(--accent); transform:translateY(-6px); }
+
+    /* Contacto */
+    .contact { background:#111; text-align:center; padding:3rem 1.5rem; }
+    .contact h2 { margin-bottom:1rem; }
+    .contact p { margin-bottom:.4rem; }
+    .contact a { color:var(--accent); font-weight:600; text-decoration:none; }
+
+    footer { background:#000; text-align:center; padding:1rem; font-size:.875rem; color:#666; }
+
+    @media(min-width:768px){ h1{font-size:3.2rem;} .tagline{font-size:1.1rem;} h2{font-size:1.5rem;} }
+
+	.title{
+	  font-size: 2rem;
+ 	 margin: 0 auto 1.5rem;
+ 	 text-align: center;
+ 	 max-width: none;
+	}
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <div class="logo">
+    <!-- Simple SVG logo -->
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#1e90ff"/>
+          <stop offset="100%" stop-color="#63b3ff"/>
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="40" fill="url(#grad)"/>
+      <text x="50" y="58" font-size="32" text-anchor="middle" fill="#0c0c0c" font-weight="700" font-family="Poppins, sans-serif">SL</text>
+    </svg>
+    Sonilux Events
+  </div>
+
+  <!-- Hero -->
+  <header id="home">
+    <h1>Sonilux Events</h1>
+    <p class="tagline">Creemos experiencias inolvidables combinando sonido de alta fidelidad, iluminación inteligente y producción integral. Nuestro equipo convierte cualquier espacio en un escenario de emociones, adaptándonos a bodas, fiestas privadas, eventos corporativos y conciertos íntimos.</p>
+    <h2>Sonido, luces y producción completa para bodas, cumpleaños, fiestas, eventos corporativos y conciertos íntimos.</h2>
+    <a href="#contacto" class="btn">Solicita tu evento</a>
+  </header>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2 class="title">Nuestros Servicios</h2>
+    <div class="services">
+      <div class="service-card"><i class="fa-solid fa-headphones-simple"></i><h3>Sonido profesional 🔊</h3><p>Altavoces, mezcladoras y micrófonos de alta fidelidad.</p></div>
+      <div class="service-card"><i class="fa-solid fa-lightbulb"></i><h3>Iluminación escénica 💡</h3><p>Ambientes únicos con luces inteligentes y efectos.</p></div>
+      <div class="service-card"><i class="fa-solid fa-microphone"></i><h3>Conciertos íntimos 🎤</h3><p>Backline completo para actuaciones en vivo de pequeño formato.</p></div>
+      <div class="service-card"><i class="fa-solid fa-music"></i><h3>DJ profesional 🎧</h3><p>Setlists personalizados para mantener la pista llena.</p></div>
+      <div class="service-card"><i class="fa-solid fa-camera"></i><h3>Fotografía & Video 📸🎥</h3><p>Capturamos cada momento con calidad profesional.</p></div>
+      <div class="service-card"><i class="fa-solid fa-camera-retro"></i><h3>Photobooth 360 📷</h3><p>Cabina interactiva para recuerdos divertidos.</p></div>
+      <div class="service-card"><i class="fa-solid fa-palette"></i><h3>Decoración temática 🎈</h3><p>Diseño y ambientación a medida para cualquier ocasión.</p></div>
+      <div class="service-card"><i class="fa-solid fa-tv"></i><h3>Pantallas LED / Proyección 🖥️</h3><p>Visuales impactantes para presentaciones y shows.</p></div>
+      <div class="service-card"><i class="fa-solid fa-cubes"></i><h3>Escenarios & Estructuras 🎪</h3><p>Montaje modular para eventos en interior o exterior.</p></div>
+      <div class="service-card"><i class="fa-solid fa-chess-board"></i><h3>Pistas de baile iluminadas 💃</h3><p>Superficies LED que hacen vibrar cada coreografía.</p></div>
+      <div class="service-card"><i class="fa-solid fa-utensils"></i><h3>Catering 🍽️</h3><p>Coordinamos comida y bebida a tu medida.</p></div>
+      <div class="service-card"><i class="fa-solid fa-champagne-glasses"></i><h3>Eventos privados y corporativos 🥂</h3><p>Nos adaptamos a cualquier tipo de celebración o reunión de empresa.</p></div>
+    </div>
+  </section>
+
+  <!-- Tipos de eventos -->
+  <section id="eventos">
+    <h2 class="title">Tipos de eventos que realizamos</h2>
+    <ul class="event-list">
+      <li>🎉 Bodas</li><li>🎂 Cumpleaños</li><li>🥳 Fiestas temáticas</li><li>🏢 Eventos corporativos</li><li>👶 Bautizos & Comuniones</li><li>🏆 Eventos deportivos</li><li>👗 Desfiles de moda</li><li>🚀 Lanzamientos de producto</li><li>🤝 Ferias & Exposiciones</li><li>🍸 Afterworks & Networking</li><li>🎖️ Cenas de gala & Premios</li><li>🎶 Conciertos íntimos</li>
+    </ul>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contact">
+    <h2 class="title">¿Listo para empezar?</h2>
+    <p>Cuéntanos tu idea y nos encargamos del resto.</p>
+    <p>SergioProdu@proton.me</p>
+  </section>
+
+  <footer>&copy; <span id="year"></span> Sonilux Events. Todos los derechos reservados.</footer>
+
+  <script> document.getElementById("year").textContent = new Date().getFullYear(); </script>
+</body>
+</html>
